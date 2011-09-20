@@ -27,13 +27,15 @@ import javax.swing.plaf.FileChooserUI;
  * @author Heitor
  */
 public class Tela extends javax.swing.JFrame {
-    public int CONTADOR=0;
+
+    public int CONTADOR = 0;
     public String txt, saida;
+
     /** Creates new form Tela */
     public Tela() {
         initComponents();
     }
-    
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -46,10 +48,10 @@ public class Tela extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         areadetexto1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jbProximo = new javax.swing.JButton();
+        jbLimpa = new javax.swing.JButton();
+        jbAnterior = new javax.swing.JButton();
+        jbFala = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         JMabrir = new javax.swing.JMenuItem();
@@ -60,27 +62,27 @@ public class Tela extends javax.swing.JFrame {
         areadetexto1.setRows(5);
         jScrollPane1.setViewportView(areadetexto1);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setText("Enviar Próximo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbProximo.setFont(new java.awt.Font("Tahoma", 1, 18));
+        jbProximo.setText("Enviar Próximo");
+        jbProximo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbProximoActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton2.setText("Limpar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jbLimpa.setFont(new java.awt.Font("Tahoma", 1, 24));
+        jbLimpa.setText("Limpar");
+        jbLimpa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jbLimpaActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18));
-        jButton3.setText("Enviar Anterior");
+        jbAnterior.setFont(new java.awt.Font("Tahoma", 1, 18));
+        jbAnterior.setText("Enviar Anterior");
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 24));
-        jButton4.setText("Falar");
+        jbFala.setFont(new java.awt.Font("Tahoma", 1, 24));
+        jbFala.setText("Falar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -91,10 +93,10 @@ public class Tela extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbFala, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                    .addComponent(jbProximo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                    .addComponent(jbLimpa, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                    .addComponent(jbAnterior, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -103,13 +105,13 @@ public class Tela extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbProximo, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jbFala, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                        .addComponent(jbLimpa, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -148,9 +150,9 @@ public class Tela extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jbLimpaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLimpaActionPerformed
         areadetexto1.setText(null);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jbLimpaActionPerformed
 
     private void JMabrirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JMabrirMouseClicked
         System.out.println("fuuuuuuuuuu");
@@ -181,20 +183,29 @@ public class Tela extends javax.swing.JFrame {
             }
         }//GEN-LAST:event_JMabrirActionPerformed
 
-        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            txt = areadetexto1.getText();
-            Controler vai = new Controler(txt);
+        private void jbProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbProximoActionPerformed
+            if (areadetexto1.getText().equals("")) {
+                //Teste para ver se existe algum texto escrito na área de texto.
+                JOptionPane.showMessageDialog(rootPane, "Adicione um texto para ser convertido e depois clique em próximo");
+            } else {
+                
+                txt = areadetexto1.getText();
+                Controler vai = new Controler(txt);
+                //    saida = txt.substring(0, 20);
+                System.out.println(saida);
 
-
-
-            //    saida = txt.substring(0, 20);
-            System.out.println(saida);
-            String tica[] = txt.trim().split(" ");
-
-            System.out.println("   primeira palavra:  "+ tica[1]);
-            System.out.println(tica.length);
-            //for (int i=0;i<tica.length;i++)
-        }//GEN-LAST:event_jButton1ActionPerformed
+                try {
+                    //Aqui convertemos a string de entrada que vem da áread e
+                    //texto em um vertor de palavras. com o .trim e o split().
+                    String tica[] = txt.trim().split(" ");
+                    System.out.println("   primeira palavra:  " + tica[0]);
+                    System.out.println(tica.length);
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(rootPane, "Erro. Seu texto não pode instanciado para a conversão.");
+                }
+                //for (int i=0;i<tica.length;i++)
+        }//GEN-LAST:event_jbProximoActionPerformed
+    }
 
     /**
      * @param args the command line arguments
@@ -210,13 +221,13 @@ public class Tela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem JMabrir;
     private javax.swing.JTextArea areadetexto1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jbAnterior;
+    private javax.swing.JButton jbFala;
+    private javax.swing.JButton jbLimpa;
+    private javax.swing.JButton jbProximo;
     // End of variables declaration//GEN-END:variables
 }
