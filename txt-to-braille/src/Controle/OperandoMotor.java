@@ -1,18 +1,24 @@
 package Controle;
 
+import javax.swing.JOptionPane;
 import parport.ParallelPort;
-
 /**
  *
  * @author Heitor
+ * 
  */
-public class OperandoMotor {
 
-    public void marca_PontoColuna(int linha) {
+public class OperandoMotor {
+    /**
+     * Ativa o caracter de uma coluna.
+     * @param linha É a linha que será ativada.
+     * 
+     */
+    public static void marca_PontoColuna(int linha) {
         int Deslocamento=200;               //+++++++++++++     CALIBRAR MOTOR PARA DAR UMA VOLTA COMPLETA
         ParallelPort porta = new ParallelPort(0x378);
         int giro = 1;
-
+         marca_PontoColuna(linha);
         for (int i=0;i<Deslocamento;i++){
             if (giro>8)
                 giro=1;
@@ -25,7 +31,7 @@ public class OperandoMotor {
         }
     }
 
-    public void desloca_Motor_Mesa(){
+    public static void desloca_Motor_Mesa(){
         int Motor = 128;
         int Deslocamento=200;               //+++++++++++++      CALIBRAR MOTOR PARA ANDAR 1,5 CM
         ParallelPort porta = new ParallelPort(0x378);
@@ -40,6 +46,15 @@ public class OperandoMotor {
                 } catch (Exception e) {
                 }
         }
+    }
+
+    public void testaSensor(){
+        //System .out .println (System .getProperty ("java.library.path"));
+        System.out.println("oi");
+        ParallelPort porta = new ParallelPort(0x378);
+        //JOptionPane.showMessageDialog(null, porta.read());
+        //System.out.println(porta.read());
+        //porta.write(2);
     }
 
 //    public static void meche() {
