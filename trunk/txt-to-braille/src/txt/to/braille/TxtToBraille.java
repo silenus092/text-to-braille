@@ -6,6 +6,7 @@ package txt.to.braille;
 
 import Modelo.caracter;
 import Modelo.converte_Caracter;
+import Visao.Tela;
 
 /**
  *
@@ -25,5 +26,8 @@ public class TxtToBraille {
         converte_Caracter oi=new converte_Caracter();
         ai=oi.ativa_colunas('a');
         System.out.println(ai.toString());
+
+        Tela vai = new Tela();
+        vai.setVisible(true);
     }
 }
